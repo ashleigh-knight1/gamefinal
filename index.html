@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>I have chosen a number between 1 and 10. Try to guess it</p>
+<button onclick= "game()"> Click to Play </button>
+<script>
+    function game() {
+
+        var secretnumber = Math.floor(Math.random() * 10 +1);
+        var message = '';
+        // var value=document.getElementById("value").value;
+
+        do {
+            var input = prompt(`Please enter a number between 1 and 10` + message);
+            var number = parseInt(input);
+
+            if (number != secretnumber) {
+                message = ' ' ;
+                // document.getElementById("input").textContent("too high!")
+                document.write("Your guess:"+number +". That is incorrect. Guess again.<br>" )
+            }
+            else if (number == secretnumber) {
+                alert(` you're correct.`)
+                document.write("That's right! You're a good guesser");
+            }
+        } while (number != secretnumber);
+    }
+</script>
+
+</body>
+</html>
